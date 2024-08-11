@@ -129,15 +129,16 @@ input[type="text"], select {
 }
 
 .save-button {
-    background-color: #00FF7F;
-    color: black;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    text-align: center;
-    border: none;
+    padding: 10px 20px; /* Adjust padding to control button size */
+    font-size: 16px; /* Adjust font size */
+    width: auto; /* Ensure the button width is auto-adjusted */
+    max-width: 100%; /* Prevent the button from exceeding its container */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #00C3A4; /* Match the background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Ensure proper alignment */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 .save-button:hover {
