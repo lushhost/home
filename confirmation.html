@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>Order Confirmation</h1>
+        <p>Your order has been successfully submitted! Please take a screenshot of the details below for your records.</p>
+
+        <div id="order-details"></div>
+
+        <script>
+            window.onload = function() {
+                const details = JSON.parse(localStorage.getItem('formDetails'));
+                const detailsDiv = document.getElementById('order-details');
+                for (let key in details) {
+                    const p = document.createElement('p');
+                    p.textContent = `${key}: ${details[key]}`;
+                    detailsDiv.appendChild(p);
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>
