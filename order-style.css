@@ -1,180 +1,105 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: white;
-    margin: 0;
-    padding: 0;
+.configure-order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all the content */
+    padding: 20px;
+    background-color: #1c1c1c; /* Adjust background color as needed */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
+.order-summary, .order-progress, .server-details {
+    width: 100%;
+    max-width: 800px; /* Set a max-width to center content */
+    background-color: #292929;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Add spacing between sections */
+    box-sizing: border-box;
 }
 
-.title {
-    font-size: 36px;
-    color: #FFF;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #BBB;
-    margin-bottom: 40px;
-}
-
-.order-container {
+.order-summary {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.order-details, .order-summary {
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    padding: 20px;
-    width: 48%;
-}
-
-.plan-header {
-    background-color: #2e2e2e;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.plan-title {
-    color: #00FF7F;
-    font-size: 28px;
-    margin: 0 0 10px;
-}
-
-.plan-specs {
-    color: #BBB;
-    margin: 0;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
+.order-summary button {
+    padding: 10px 20px;
     font-size: 16px;
-    color: #FFF;
+    background-color: #00C3A4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.server-details {
+    text-align: left;
+}
+
+.order-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.server-details .section-title, .order-progress .section-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.order-progress .progress-item {
     margin-bottom: 5px;
 }
 
-input[type="text"], select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #00FF7F;
-    background-color: #2e2e2e;
-    color: #FFF;
-    font-size: 16px;
-}
-
-.version-options {
+.billing-cycle {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.version-options label {
-    font-size: 16px;
-    padding: 10px 20px;
-    border: 1px solid #00FF7F;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #2e2e2e;
-    color: #FFF;
-}
-
-.version-options input[type="radio"]:checked + label {
-    background-color: #00FF7F;
-    color: #000;
-}
-
-.billing-options {
-    display: flex;
-    justify-content: space-between;
-}
-
-.billing-option {
-    flex: 1;
+.billing-cycle div, .minecraft-version div {
     margin-right: 10px;
-    text-align: center;
 }
 
-.billing-option:last-child {
+.billing-cycle div:last-child, .minecraft-version div:last-child {
     margin-right: 0;
 }
 
-.billing-option label {
-    display: block;
-    background-color: #2e2e2e;
-    padding: 10px 0;
+.minecraft-version, .billing-cycle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.minecraft-version div, .billing-cycle div {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.minecraft-version div button, .billing-cycle div button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #00C3A4;
+    border: 1px solid #00C3A4;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.billing-option label strong {
-    color: #00FF7F;
-    font-size: 18px;
+.minecraft-version div button:hover, .billing-cycle div button:hover {
+    background-color: #00C3A4;
+    color: #fff;
 }
 
-.billing-option label span {
-    display: block;
-    color: #BBB;
-    font-size: 14px;
-}
-
-.save-button {
-    padding: 10px 20px;  /* Adjust padding to control button size */
-    font-size: 16px;     /* Font size for the button text */
-    width: auto;         /* Let the width adjust automatically */
-    height: auto;        /* Let the height adjust automatically */
-    max-width: 100%;     /* Prevent the button from exceeding container width */
-    max-height: 50px;    /* Set a maximum height */
-    border-radius: 5px;  /* Rounded corners */
-    background-color: #00C3A4; /* Button background color */
-    color: #fff;         /* Text color */
-    text-align: center;  /* Center the text */
-    cursor: pointer;     /* Pointer cursor on hover */
-    display: inline-block; /* Align the button properly */
-    box-sizing: border-box; /* Ensure padding doesn't affect size */
-}
-
-.save-button:hover {
-    background-color: #00cc66;
-}
-
-.progress {
-    margin-bottom: 20px;
-}
-
-.progress h3, .summary h3 {
-    color: #FFF;
-    margin-bottom: 10px;
-}
-
-.progress ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.progress ul li {
-    padding: 10px 0;
-    color: #BBB;
-    border-bottom: 1px solid #333;
-}
-
-.progress ul li.active {
-    color: #00FF7F;
-}
-
-.summary p {
+.save-configuration-button {
+    padding: 10px 20px;
     font-size: 16px;
-    color: #BBB;
-    margin: 10px 0;
+    background-color: #00C3A4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
