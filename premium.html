@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plans - Lush Host</title>
+    <link rel="stylesheet" href="premium-style.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <h1>Lush Host</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://panel.lushhost.in">Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Premium Plans Section -->
+    <section id="plans">
+        <div class="plan-container">
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Creeper Plan</h3>
+                    <span class="badge">BEST CHOICE</span>
+                </div>
+                <div class="plan-details">
+                    <p><strong>Recommended Players:</strong> 25+</p>
+                    <p><strong>RAM:</strong> 8GB</p>
+                </div>
+                <p class="price">Starting at ₹120/mo</p>
+                <button class="btn-pick-location" onclick="showPopup()">Buy Now</button>
+            </div>
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Zombie Plan</h3>
+                </div>
+                <div class="plan-details">
+                    <p><strong>Recommended Players:</strong> 30</p>
+                    <p><strong>RAM:</strong> 10GB</p>
+                </div>
+                <p class="price">Starting at ₹190/mo</p>
+                <button class="btn-pick-location" onclick="showPopup()">Buy Now</button>
+            </div>
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Enderman Plan</h3>
+                </div>
+                <div class="plan-details">
+                    <p><strong>Recommended Players:</strong> 50+</p>
+                    <p><strong>RAM:</strong> 12GB</p>
+                </div>
+                <p class="price">Starting at ₹346/mo</p>
+                <button class="btn-pick-location" onclick="showPopup()">Buy Now</button>
+            </div>
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Dragon Plan</h3>
+                </div>
+                <div class="plan-details">
+                    <p><strong>Recommended Players:</strong> 70+</p>
+                    <p><strong>RAM:</strong> 16GB</p>
+                </div>
+                <p class="price">Starting at ₹569/mo</p>
+                <button class="btn-pick-location" onclick="showPopup()">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Join our Discord to Buy Server</p>
+            <a href="https://discord.gg/yourserverlink" class="btn-discord">Join Discord</a>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
