@@ -131,7 +131,7 @@ input[type="text"], select {
 .save-button {
     background-color: #00FF7F;
     color: black;
-    padding: 10px 20px;
+    padding: 10px 5px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
