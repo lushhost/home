@@ -10,58 +10,61 @@
     <div class="container">
         <h1>Configure Order</h1>
         <p class="subtitle">Configure the server wisely for your needs, but don’t worry - you can always upgrade in the future!</p>
-        <div class="order-content">
-            <div class="server-details">
-                <h2>Budget - 1</h2>
-                <ul>
-                    <li>CPU: Ryzen 3 3200G</li>
-                    <li>RAM: 1GB DDR4</li>
-                    <li>Disk: 15GB NVMe SSD</li>
-                </ul>
+        
+        <div class="content">
+            <div class="left-section">
+                <div class="server-info">
+                    <h2>Budget - 1</h2>
+                    <p><strong>CPU:</strong> Ryzen 3 3200G (max 4.0 GHz)</p>
+                    <p><strong>RAM:</strong> 1GB DDR4</p>
+                    <p><strong>Disk:</strong> 15GB NVMe SSD</p>
+                </div>
+
                 <div class="input-group">
                     <label for="server-name">Server Name</label>
                     <input type="text" id="server-name" placeholder="Server Name">
                 </div>
+
                 <div class="input-group">
                     <label for="server-location">Server Location</label>
                     <select id="server-location">
                         <option value="mumbai">Mumbai India, AS</option>
-                        <!-- Add more locations as needed -->
                     </select>
                 </div>
+
                 <div class="input-group">
-                    <label for="server-storage">Server Storage</label>
-                    <select id="server-storage">
-                        <option value="10gb">10GB - FREE</option>
-                        <!-- Add more storage options as needed -->
-                    </select>
+                    <label for="minecraft-version">Minecraft Version</label>
+                    <div class="options">
+                        <button class="option-button active">Minecraft Java</button>
+                        <button class="option-button">Minecraft Bedrock</button>
+                    </div>
                 </div>
+
                 <div class="input-group">
-                    <label for="backups">Backups</label>
-                    <select id="backups">
-                        <option value="none">No backup</option>
-                        <!-- Add more backup options as needed -->
-                    </select>
-                </div>
-                <div class="minecraft-version">
-                    <label>Minecraft Version</label>
-                    <button class="version-button active">Minecraft Java</button>
-                    <button class="version-button">Minecraft Bedrock</button>
-                </div>
-                <div class="billing-cycle">
-                    <label>Choose Billing Cycle</label>
-                    <button class="billing-button">Monthly ₹15</button>
-                    <button class="billing-button">Yearly ₹180 <span>SAVE 5%</span></button>
+                    <label for="billing-cycle">Choose Billing Cycle</label>
+                    <div class="options">
+                        <button class="option-button">Monthly ₹15</button>
+                        <button class="option-button active">Yearly ₹180 <span>SAVE 5%</span></button>
+                    </div>
                 </div>
             </div>
-            <div class="order-progress">
-                <h3>Order Progress</h3>
-                <ul>
-                    <li class="active">Configure Order</li>
-                    <li>Overview</li>
-                    <li>Checkout</li>
-                </ul>
-                <button class="save-button">Save Configuration</button>
+
+            <div class="right-section">
+                <div class="order-progress">
+                    <h3>Order Progress</h3>
+                    <ul>
+                        <li class="active">Configure Order</li>
+                        <li>Overview</li>
+                        <li>Checkout</li>
+                    </ul>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <p><strong>Monthly:</strong> ₹15</p>
+                    <p><strong>Total:</strong> ₹180</p>
+                    <button class="save-button">Save Configuration</button>
+                </div>
             </div>
         </div>
     </div>
