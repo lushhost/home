@@ -131,11 +131,11 @@ input[type="text"], select {
 .save-button {
     background-color: #00FF7F;
     color: black;
-    padding: 10px 5px;
+    padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+    width: 20%;
     text-align: center;
     border: none;
 }
