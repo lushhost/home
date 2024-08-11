@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             minecraftButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            updateOrderSummary();
         });
     });
 
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateOrderSummary() {
-        const selectedMinecraft = document.querySelector('.input-group:nth-of-type(1) .option-button.active').textContent;
         const selectedBillingCycle = document.querySelector('.input-group:nth-of-type(2) .option-button.active').textContent;
 
         let monthlyCost = 0;
