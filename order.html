@@ -7,45 +7,63 @@
     <link rel="stylesheet" href="order-style.css">
 </head>
 <body>
-    <div class="configure-order-container">
-        <div class="server-details">
-            <h2 class="section-title">Budget - 1</h2>
-            <p>CPU: Ryzen 3 3200G</p>
-            <p>RAM: 1GB DDR4</p>
-            <p>Disk: 15GB NVMe SSD</p>
-            <input type="text" placeholder="Server Name">
-            <select>
-                <option value="mumbai">Mumbai India, AS</option>
-                <!-- Other options -->
-            </select>
-        </div>
-        
-        <div class="minecraft-version">
-            <div>
-                <button>Minecraft Java</button>
+    <div class="container">
+        <h1>Configure Order</h1>
+        <p class="subtitle">Configure the server wisely for your needs, but don’t worry - you can always upgrade in the future!</p>
+        <div class="order-content">
+            <div class="server-details">
+                <h2>Budget - 1</h2>
+                <ul>
+                    <li>CPU: Ryzen 3 3200G</li>
+                    <li>RAM: 1GB DDR4</li>
+                    <li>Disk: 15GB NVMe SSD</li>
+                </ul>
+                <div class="input-group">
+                    <label for="server-name">Server Name</label>
+                    <input type="text" id="server-name" placeholder="Server Name">
+                </div>
+                <div class="input-group">
+                    <label for="server-location">Server Location</label>
+                    <select id="server-location">
+                        <option value="mumbai">Mumbai India, AS</option>
+                        <!-- Add more locations as needed -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="server-storage">Server Storage</label>
+                    <select id="server-storage">
+                        <option value="10gb">10GB - FREE</option>
+                        <!-- Add more storage options as needed -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="backups">Backups</label>
+                    <select id="backups">
+                        <option value="none">No backup</option>
+                        <!-- Add more backup options as needed -->
+                    </select>
+                </div>
+                <div class="minecraft-version">
+                    <label>Minecraft Version</label>
+                    <button class="version-button active">Minecraft Java</button>
+                    <button class="version-button">Minecraft Bedrock</button>
+                </div>
+                <div class="billing-cycle">
+                    <label>Choose Billing Cycle</label>
+                    <button class="billing-button">Monthly ₹15</button>
+                    <button class="billing-button">Yearly ₹180 <span>SAVE 5%</span></button>
+                </div>
             </div>
-            <div>
-                <button>Minecraft Bedrock</button>
+            <div class="order-progress">
+                <h3>Order Progress</h3>
+                <ul>
+                    <li class="active">Configure Order</li>
+                    <li>Overview</li>
+                    <li>Checkout</li>
+                </ul>
+                <button class="save-button">Save Configuration</button>
             </div>
-        </div>
-        
-        <div class="billing-cycle">
-            <div>
-                <button>Monthly ₹15</button>
-            </div>
-            <div>
-                <button>Yearly ₹180<br>SAVE 5%</button>
-            </div>
-        </div>
-        
-        <div class="order-progress">
-            <h3 class="section-title">Order Progress</h3>
-            <div class="progress-item">Configure Order</div>
-            <div class="progress-item">Overview</div>
-            <div class="progress-item">Checkout</div>
-        </div>
-        
-        <div class="order-summary">
-        <button class="save-configuration-button">Save Configuration</button>
         </div>
     </div>
+</body>
+</html>

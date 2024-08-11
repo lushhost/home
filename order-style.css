@@ -1,105 +1,147 @@
-.configure-order-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center all the content */
+/* order-style.css */
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #1c1c1c; /* Adjust background color as needed */
 }
 
-.order-summary, .order-progress, .server-details {
-    width: 100%;
-    max-width: 800px; /* Set a max-width to center content */
-    background-color: #292929;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px; /* Add spacing between sections */
-    box-sizing: border-box;
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-.order-summary {
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.order-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.order-summary button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00C3A4;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.server-details {
-    text-align: left;
-}
-
-.order-progress {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
 }
 
-.server-details .section-title, .order-progress .section-title {
-    font-size: 20px;
+.server-details {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.server-details h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.server-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.server-details ul li {
+    font-size: 16px;
     margin-bottom: 10px;
-    color: #ffffff;
 }
 
-.order-progress .progress-item {
-    margin-bottom: 5px;
+.input-group {
+    margin-bottom: 20px;
 }
 
-.billing-cycle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
 }
 
-.billing-cycle div, .minecraft-version div {
-    margin-right: 10px;
-}
-
-.billing-cycle div:last-child, .minecraft-version div:last-child {
-    margin-right: 0;
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
 }
 
 .minecraft-version, .billing-cycle {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.minecraft-version div, .billing-cycle div {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.minecraft-version div button, .billing-cycle div button {
-    width: 100%;
-    padding: 10px;
+.minecraft-version label,
+.billing-cycle label {
+    display: block;
     font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.version-button,
+.billing-button {
     background-color: #333;
-    color: #00C3A4;
-    border: 1px solid #00C3A4;
+    color: #fff;
+    padding: 10px 15px;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.minecraft-version div button:hover, .billing-cycle div button:hover {
-    background-color: #00C3A4;
-    color: #fff;
-}
-
-.save-configuration-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00C3A4;
-    color: #fff;
     border: none;
-    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
     cursor: pointer;
+}
+
+.version-button.active,
+.billing-button.active {
+    background-color: #4CAF50;
+}
+
+.billing-button span {
+    color: #bbb;
+    font-size: 12px;
+}
+
+.order-progress {
+    width: 30%;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.order-progress h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.order-progress ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.order-progress ul li {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.order-progress ul li.active {
+    color: #4CAF50;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
 }
