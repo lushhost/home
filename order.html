@@ -8,27 +8,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>Configure Order</h1>
-        <p class="subtitle">Configure the server wisely for your needs, but don’t worry - you can always upgrade in the future!</p>
+        <h1>Configure Your Server</h1>
+        <p class="subtitle">Select the best options for your server. You can always adjust these settings later!</p>
         
         <div class="content">
             <div class="left-section">
                 <div class="server-info">
                     <h2>Budget - 1</h2>
-                    <p><strong>CPU:</strong> Ryzen 3 3200G (max 4.0 GHz)</p>
-                    <p><strong>RAM:</strong> 1GB DDR4</p>
-                    <p><strong>Disk:</strong> 15GB NVMe SSD</p>
+                    <ul>
+                        <li><strong>CPU:</strong> Ryzen 3 3200G (max 4.0 GHz)</li>
+                        <li><strong>RAM:</strong> 1GB DDR4</li>
+                        <li><strong>Disk:</strong> 15GB NVMe SSD</li>
+                    </ul>
                 </div>
 
                 <div class="input-group">
                     <label for="server-name">Server Name</label>
-                    <input type="text" id="server-name" placeholder="Server Name">
+                    <input type="text" id="server-name" placeholder="Enter server name">
                 </div>
 
                 <div class="input-group">
                     <label for="server-location">Server Location</label>
                     <select id="server-location">
-                        <option value="mumbai">Mumbai India, AS</option>
+                        <option value="mumbai">Mumbai, India</option>
+                        <option value="newyork">New York, USA</option>
+                        <option value="london">London, UK</option>
+                        <option value="singapore">Singapore, AS</option>
                     </select>
                 </div>
 
@@ -44,7 +49,7 @@
                     <label for="billing-cycle">Choose Billing Cycle</label>
                     <div class="options">
                         <button class="option-button">Monthly ₹15</button>
-                        <button class="option-button active">Yearly ₹180 <span>SAVE 5%</span></button>
+                        <button class="option-button active">Yearly ₹180 <span class="discount">SAVE 5%</span></button>
                     </div>
                 </div>
             </div>
@@ -61,8 +66,8 @@
 
                 <div class="order-summary">
                     <h3>Order Summary</h3>
-                    <p><strong>Monthly:</strong> ₹15</p>
-                    <p><strong>Total:</strong> ₹180</p>
+                    <p><strong>Monthly Cost:</strong> ₹15</p>
+                    <p><strong>Total Cost:</strong> ₹180</p>
                     <button class="save-button">Save Configuration</button>
                 </div>
             </div>
