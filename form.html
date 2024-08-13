@@ -23,7 +23,7 @@
             </select>
 
             <label for="Plan">Plan:</label>
-            <select id="Plan" name="Plan" required onchange="updateForm()">
+            <select id="Plan" name="Plan" onchange="updateForm()" required>
                 <option value="Wood Plan">Wood Plan | Budget</option>
                 <option value="Stone Plan">Stone Plan | Budget</option>
                 <option value="Coal Plan">Coal Plan | Budget</option>
@@ -34,13 +34,14 @@
                 <option value="Dragon Plan">Dragon Plan | Premium</option>
             </select>
 
-            <label for="Panel-Account">Do you have an Existing Panel Account?</label>
+            <label for="Panel-Account">Do you have an Existing Panel Account:</label>
             <select id="Panel-Account" name="Panel-Account" required>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
             
-            <div id="coupon-code-container" style="display:none;">
+            <!-- Coupon Code Section -->
+            <div id="coupon-code-container" style="display: none;">
                 <label for="Coupon-Code">Coupon Code:</label>
                 <input type="text" id="Coupon-Code" name="Coupon-Code">
             </div>
@@ -77,7 +78,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const planName = urlParams.get('plan');
             document.getElementById('plan-name').innerText = planName;
-            updateForm();
+            updateForm(); // Update the form based on the selected plan
         };
 
         function updateForm() {
@@ -96,6 +97,7 @@
                 couponCodeContainer.style.display = "block";
             } else {
                 couponCodeContainer.style.display = "none";
+                document.getElementById('Coupon-Code').value = ""; // Clear Coupon Code field when hiding it
             }
         }
 
@@ -108,15 +110,14 @@
                 details[key] = value;
             });
 
-            const validCoupons = ["SAVE10", "LUSHBXC"];
-            const couponCode = details["Coupon-Code"];
-
-            if (!validCoupons.includes(couponCode)) {
-                details["Coupon-Code"] = "";
+            // Validate Coupon Code
+            const validCouponCodes = ["SAVE10", "LUSHBXC"];
+            const couponCode = formData.get('Coupon-Code');
+            if (couponCode && !validCouponCodes.includes(couponCode)) {
+                document.getElementById('Coupon-Code').value = ""; // Clear invalid coupon code
             }
 
             localStorage.setItem('formDetails', JSON.stringify(details));
-
             window.location.href = 'confirmation.html';
         }
     </script>
