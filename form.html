@@ -23,7 +23,7 @@
             </select>
 
             <label for="Plan">Plan:-</label>
-            <select id="pPlan" name="Plan" required>
+            <select id="Plan" name="Plan" required>
                     <option value="Wood Plan">Wood Plan | Budget</option>
                     <option value="Stone Plan">Stone Plan | Budget</option>
                     <option value="Coal Plan">Coal Plan | Budget</option>
@@ -33,7 +33,19 @@
                     <option value="Enderman Plan">Enderman Plan | Premium</option>
                     <option value="Dragon Plan">Dragon Plan | Premium</option>
             </select>
+
+            </select>
+
+            <label for="Panel-Account">Do you have Existed Panel Account:-</label>
+            <select id="Panel-Account" name="Panel-Account" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+            </select>
             
+            <label for="Coupon-Code">Coupon Code:</label>
+            <input type="Coupon-Code" id="Coupon-Code" name="Coupon-Code">
+
+
             <label for="Email">Email:</label>
             <input type="Email" id="Email" name="Email" required>
             
@@ -71,5 +83,24 @@
             window.location.href = 'confirmation.html';
         }
     </script>
+
+    <script>
+         function validateCoupon() {
+             const validCodes = ['SAVE10', 'LUSHBXC'];
+             const couponCode = document.getElementById('Coupon-Code').value.trim();
+             const errorMessage = document.getElementById('error-message');
+
+             if (couponCode === '') {
+              return true; // No coupon code entered, so the form is valid.
+             } else if (validCodes.includes(couponCode.toUpperCase())) {
+              return true; // Valid coupon code entered.
+             } else {
+             errorMessage.textContent = 'Invalid coupon code. Please enter a valid code.';
+             errorMessage.style.display = 'block';
+             return false; // Prevent form submission.
+        }
+    }
+</script> 
+
 </body>
 </html>
