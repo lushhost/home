@@ -23,15 +23,15 @@
             </select>
 
             <label for="Plan">Plan:</label>
-            <select id="Plan" name="Plan" onchange="updateForm()" required>
-                <option value="Wood Plan">Wood Plan | Budget</option>
-                <option value="Stone Plan">Stone Plan | Budget</option>
-                <option value="Coal Plan">Coal Plan | Budget</option>
-                <option value="Iron Plan">Iron Plan | Budget</option>
-                <option value="Zombie Plan">Zombie Plan | Premium</option>
-                <option value="Creeper Plan">Creeper Plan | Premium</option>
-                <option value="Enderman Plan">Enderman Plan | Premium</option>
-                <option value="Dragon Plan">Dragon Plan | Premium</option>
+            <select id="Plan" name="Plan" required>
+                <option value="Wood Plan | Budget">Wood Plan | Budget</option>
+                <option value="Stone Plan | Budget">Stone Plan | Budget</option>
+                <option value="Coal Plan | Budget">Coal Plan | Budget</option>
+                <option value="Iron Plan | Budget">Iron Plan | Budget</option>
+                <option value="Zombie Plan | Premium">Zombie Plan | Premium</option>
+                <option value="Creeper Plan | Premium">Creeper Plan | Premium</option>
+                <option value="Enderman Plan | Premium">Enderman Plan | Premium</option>
+                <option value="Dragon Plan | Premium">Dragon Plan | Premium</option>
             </select>
 
             <label for="Panel-Account">Do you have an Existing Panel Account:</label>
@@ -39,16 +39,15 @@
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            
-            <!-- Coupon Code Section -->
-            <div id="coupon-code-container" style="display: none;">
+
+            <div id="coupon-container" style="display: none;">
                 <label for="Coupon-Code">Coupon Code:</label>
                 <input type="text" id="Coupon-Code" name="Coupon-Code">
             </div>
 
             <label for="Email">Email:</label>
             <input type="email" id="Email" name="Email" required>
-            
+
             <label for="discord-id">Discord ID:</label>
             <input type="text" id="discord-id" name="discord-id" required>
 
@@ -62,65 +61,6 @@
         </form>
     </div>
 
-    <script>
-        const planPrices = {
-            "Wood Plan": { "Monthly": "₹15", "Yearly": "₹180" },
-            "Stone Plan": { "Monthly": "₹30", "Yearly": "₹360" },
-            "Coal Plan": { "Monthly": "₹55", "Yearly": "₹660" },
-            "Iron Plan": { "Monthly": "₹80", "Yearly": "₹960" },
-            "Zombie Plan": { "Monthly": "₹499", "Yearly": "₹1188" },
-            "Creeper Plan": { "Monthly": "₹246", "Yearly": "₹975" },
-            "Enderman Plan": { "Monthly": "₹780", "Yearly": "₹2300" },
-            "Dragon Plan": { "Monthly": "₹920", "Yearly": "₹3790" }
-        };
-
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const planName = urlParams.get('plan');
-            document.getElementById('plan-name').innerText = planName;
-            updateForm(); // Update the form based on the selected plan
-        };
-
-        function updateForm() {
-            const plan = document.getElementById('Plan').value;
-            const billingCycleSelect = document.getElementById('billing-cycle');
-            const couponCodeContainer = document.getElementById('coupon-code-container');
-
-            // Update billing cycle prices
-            billingCycleSelect.innerHTML = `
-                <option value="Monthly">Monthly (${planPrices[plan]["Monthly"]})</option>
-                <option value="Yearly">Yearly (${planPrices[plan]["Yearly"]})</option>
-            `;
-
-            // Show/hide coupon code based on plan type
-            if (plan.includes("Premium")) {
-                couponCodeContainer.style.display = "block";
-            } else {
-                couponCodeContainer.style.display = "none";
-                document.getElementById('Coupon-Code').value = ""; // Clear Coupon Code field when hiding it
-            }
-        }
-
-        function submitForm(event) {
-            event.preventDefault();
-            const form = document.getElementById('plan-form');
-            const formData = new FormData(form);
-            const details = {};
-            formData.forEach((value, key) => {
-                details[key] = value;
-            });
-
-            // Validate Coupon Code
-            const validCouponCodes = ["SAVE10", "LUSHBXC"];
-            const couponCode = formData.get('Coupon-Code');
-            if (couponCode && !validCouponCodes.includes(couponCode)) {
-                document.getElementById('Coupon-Code').value = ""; // Clear invalid coupon code
-            }
-
-            localStorage.setItem('formDetails', JSON.stringify(details));
-            window.location.href = 'confirmation.html';
-        }
-    </script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>
