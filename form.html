@@ -11,43 +11,40 @@
     <div class="form-container">
         <h1 id="plan-name">Selected Plan</h1>
         <form id="plan-form" onsubmit="submitForm(event)">
-            <label for="Payment-Method">PaymentMethod:-</label>
+            <label for="Payment-Method">Payment Method:</label>
             <select id="Payment-Method" name="Payment-Method" required>
-                    <option value="EasyPaisa">EasyPaisa</option>
-                    <option value="JazzCash">JazzCash</option>
-                    <option value="Bank">Bank</option>
-                    <option value="UPI">UPI</option>
-                    <option value="GooglePay">GooglePay</option>
-                    <option value="Binnance">Binnance</option>
-                    <option value="Google Redeem">Google Redeem</option>
+                <option value="EasyPaisa">EasyPaisa</option>
+                <option value="JazzCash">JazzCash</option>
+                <option value="Bank">Bank</option>
+                <option value="UPI">UPI</option>
+                <option value="GooglePay">GooglePay</option>
+                <option value="Binance">Binance</option>
+                <option value="Google Redeem">Google Redeem</option>
             </select>
 
-            <label for="Plan">Plan:-</label>
+            <label for="Plan">Plan:</label>
             <select id="Plan" name="Plan" required>
-                    <option value="Wood Plan">Wood Plan | Budget</option>
-                    <option value="Stone Plan">Stone Plan | Budget</option>
-                    <option value="Coal Plan">Coal Plan | Budget</option>
-                    <option value="Iron Plan">Iron Plan | Budget</option>
-                    <option value="Zombie Plan">Zombie Plan | Premium</option>
-                    <option value="Creeper Plan">Creeper Plan | Premium</option>
-                    <option value="Enderman Plan">Enderman Plan | Premium</option>
-                    <option value="Dragon Plan">Dragon Plan | Premium</option>
+                <option value="Wood Plan">Wood Plan | Budget</option>
+                <option value="Stone Plan">Stone Plan | Budget</option>
+                <option value="Coal Plan">Coal Plan | Budget</option>
+                <option value="Iron Plan">Iron Plan | Budget</option>
+                <option value="Zombie Plan">Zombie Plan | Premium</option>
+                <option value="Creeper Plan">Creeper Plan | Premium</option>
+                <option value="Enderman Plan">Enderman Plan | Premium</option>
+                <option value="Dragon Plan">Dragon Plan | Premium</option>
             </select>
 
-            </select>
-
-            <label for="Panel-Account">Do you have Existed Panel Account:-</label>
+            <label for="Panel-Account">Do you have an existing Panel Account?</label>
             <select id="Panel-Account" name="Panel-Account" required>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
             </select>
             
             <label for="Coupon-Code">Coupon Code:</label>
-            <input type="Coupon-Code" id="Coupon-Code" name="Coupon-Code">
-
+            <input type="text" id="Coupon-Code" name="Coupon-Code">
 
             <label for="Email">Email:</label>
-            <input type="Email" id="Email" name="Email" required>
+            <input type="email" id="Email" name="Email" required>
             
             <label for="discord-id">Discord ID:</label>
             <input type="text" id="discord-id" name="discord-id" required>
@@ -60,6 +57,7 @@
 
             <button type="submit">Submit</button>
         </form>
+        <p id="error-message" style="color: red; display: none;"></p>
     </div>
 
     <script>
@@ -69,8 +67,24 @@
             document.getElementById('plan-name').innerText = planName;
         };
 
+        function validateCoupon(couponCode) {
+            const validCodes = ['SAVE10', 'LUSHBXC'];
+            return couponCode === '' || validCodes.includes(couponCode.toUpperCase());
+        }
+
         function submitForm(event) {
             event.preventDefault();
+            const couponCode = document.getElementById('Coupon-Code').value.trim();
+            const errorMessage = document.getElementById('error-message');
+
+            if (!validateCoupon(couponCode)) {
+                errorMessage.textContent = 'Invalid coupon code. Please enter a valid code.';
+                errorMessage.style.display = 'block';
+                return; // Prevent form submission if coupon code is invalid
+            } else {
+                errorMessage.style.display = 'none';
+            }
+
             const form = document.getElementById('plan-form');
             const formData = new FormData(form);
             const details = {};
@@ -83,6 +97,5 @@
             window.location.href = 'confirmation.html';
         }
     </script>
-
 </body>
 </html>
