@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Form</title>
+    <title>Check Out | Lush Host</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="icon.png">
 </head>
@@ -18,7 +18,7 @@
                 <option value="Bank">Bank</option>
                 <option value="UPI">UPI</option>
                 <option value="GooglePay">GooglePay</option>
-                <option value="Binance">Binance</option>
+                <option value="Binnance">Binnance</option>
                 <option value="Google Redeem">Google Redeem</option>
             </select>
 
@@ -34,7 +34,7 @@
                 <option value="Dragon Plan">Dragon Plan | Premium</option>
             </select>
 
-            <label for="Panel-Account">Do you have an existing Panel Account?</label>
+            <label for="Panel-Account">Do you have an Existing Panel Account?</label>
             <select id="Panel-Account" name="Panel-Account" required>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -57,35 +57,22 @@
 
             <button type="submit">Submit</button>
         </form>
-        <p id="error-message" style="color: red; display: none;"></p>
     </div>
 
     <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const planName = urlParams.get('plan');
-            document.getElementById('plan-name').innerText = planName;
-        };
-
-        function validateCoupon(couponCode) {
-            const validCodes = ['SAVE10', 'LUSHBXC'];
-            return couponCode === '' || validCodes.includes(couponCode.toUpperCase());
-        }
+        const validCoupons = ["SAVE10", "LUSHBXC"];
 
         function submitForm(event) {
             event.preventDefault();
-            const couponCode = document.getElementById('Coupon-Code').value.trim();
-            const errorMessage = document.getElementById('error-message');
+            const form = document.getElementById('plan-form');
+            const couponCodeInput = document.getElementById('Coupon-Code');
+            const couponCode = couponCodeInput.value.trim();
 
-            if (!validateCoupon(couponCode)) {
-                errorMessage.textContent = 'Invalid coupon code. Please enter a valid code.';
-                errorMessage.style.display = 'block';
-                return; // Prevent form submission if coupon code is invalid
-            } else {
-                errorMessage.style.display = 'none';
+            if (couponCode && !validCoupons.includes(couponCode)) {
+                alert('Invalid Coupon Code. It will be removed.');
+                couponCodeInput.value = "";  // Clear the invalid coupon code
             }
 
-            const form = document.getElementById('plan-form');
             const formData = new FormData(form);
             const details = {};
             formData.forEach((value, key) => {
@@ -96,6 +83,13 @@
 
             window.location.href = 'confirmation.html';
         }
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const planName = urlParams.get('plan');
+            document.getElementById('plan-name').innerText = planName;
+        };
     </script>
+
 </body>
 </html>
