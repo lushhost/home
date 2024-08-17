@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'Stone Plan | Budget': { 'Monthly': '₹30', 'Yearly': '₹360' },
         'Coal Plan | Budget': { 'Monthly': '₹55', 'Yearly': '₹660' },
         'Iron Plan | Budget': { 'Monthly': '₹80', 'Yearly': '₹960' },
-        'Zombie Plan | Premium': { 'Monthly': '₹499', 'Yearly': '₹1188' },
-        'Creeper Plan | Premium': { 'Monthly': '₹246', 'Yearly': '₹975' },
-        'Enderman Plan | Premium': { 'Monthly': '₹780', 'Yearly': '₹2300' },
-        'Dragon Plan | Premium': { 'Monthly': '₹920', 'Yearly': '₹3790' }
+        'Zombie Plan | Premium': { 'Monthly': '₹219', 'Yearly': '₹1011' },
+        'Creeper Plan | Premium': { 'Monthly': '₹155', 'Yearly': '₹1319' },
+        'Enderman Plan | Premium': { 'Monthly': '₹320', 'Yearly': '₹1799' },
+        'Dragon Plan | Premium': { 'Monthly': '₹415', 'Yearly': '₹2130' }
     };
 
     function updateBillingCycleOptions() {
