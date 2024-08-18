@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const couponContainer = document.getElementById('coupon-container');
     const couponInput = document.getElementById('Coupon-Code');
 
+    // Plan prices mapping
     const planPrices = {
         'Wood Plan | Budget': { 'Monthly': '₹15', 'Yearly': '₹180' },
         'Stone Plan | Budget': { 'Monthly': '₹30', 'Yearly': '₹360' },
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Dragon Plan | Premium': { 'Monthly': '₹499', 'Yearly': '₹1799' }
     };
 
+    // Function to update the billing cycle options based on the selected plan
     function updateBillingCycleOptions() {
         const selectedPlan = planSelect.value;
         const prices = planPrices[selectedPlan];
@@ -33,27 +35,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Initialize the billing cycle options on page load and handle plan changes
     planSelect.addEventListener('change', updateBillingCycleOptions);
-    updateBillingCycleOptions(); // Initialize on page load
+    updateBillingCycleOptions(); // Initial call on page load
 
+    // Handle form submission
     document.getElementById('plan-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const couponCode = couponInput.value.trim();
+        event.preventDefault(); // Prevent default form submission
 
-        // Check if the coupon code is valid
-        const validCoupons = ['SAVE10', 'LUSHBXC'];
+        const couponCode = couponInput.value.trim();
+        const validCoupons = ['SAVE10', 'LUSHBXC']; // Valid coupon codes
+
+        // Validate the coupon code
         if (couponCode && !validCoupons.includes(couponCode)) {
             alert('Invalid Coupon Code! The code will be ignored.');
             couponInput.value = ''; // Clear invalid coupon code
         }
 
-        // Save form data and redirect to confirmation page
+        // Collect form data and save it to localStorage
         const formData = new FormData(this);
         const details = {};
         formData.forEach((value, key) => {
             details[key] = value;
         });
-        localStorage.setItem('formDetails', JSON.stringify(details));
+
+        localStorage.setItem('formDetails', JSON.stringify(details)); // Save to localStorage
+
+        // Redirect to confirmation page
         window.location.href = 'confirmation.html';
     });
 });

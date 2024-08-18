@@ -18,18 +18,18 @@
         <p>For More Purchase info Check our Blogs</p>
 
         <div id="order-details"></div>
-
-        <script>
-            window.onload = function() {
-                const details = JSON.parse(localStorage.getItem('formDetails'));
-                const detailsDiv = document.getElementById('order-details');
-                for (let key in details) {
-                    const p = document.createElement('p');
-                    p.textContent = `${key}: ${details[key]}`;
-                    detailsDiv.appendChild(p);
-                }
-            };
-        </script>
     </div>
+
+    <script>
+        window.onload = function() {
+            const details = JSON.parse(localStorage.getItem('formDetails'));
+            const detailsDiv = document.getElementById('order-details');
+            for (let key in details) {
+                const p = document.createElement('p');
+                p.textContent = `${key}: ${details[key]}`;
+                detailsDiv.appendChild(p);
+            }
+        };
+    </script>
 </body>
 </html>
