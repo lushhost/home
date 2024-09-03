@@ -1,0 +1,86 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.wifi-animation {
+    margin-bottom: 30px;
+}
+
+.wifi-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    border-radius: 50%;
+    position: relative;
+    animation: wifi-move 2s ease-in-out infinite;
+}
+
+@keyframes wifi-move {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+}
+
+.progress-bar-container {
+    margin-top: 20px;
+}
+
+.file-transfer {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-gif {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: #2ecc71;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.percentage {
+    font-size: 18px;
+}
+
+.redirecting-message {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #888;
+}
